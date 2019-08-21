@@ -1,0 +1,25 @@
+<p class="example-card">Employee List</p>
+
+<mat-card class="example-card">
+    <form [formGroup]="employeeProfileGroup" (submit)="formSubmit()">
+        <mat-form-field class="example-full-width">
+            <!-- <input matInput placeholder="Name " [formControl]="formInputName"> -->
+            <input matInput placeholder="Name " formControlName="namex">
+            <mat-error *ngIf="employeeProfileGroup.get('namex').hasError('required')">Name is Required</mat-error>
+            <mat-error *ngIf="employeeProfileGroup.get('namex').hasError('minlength')"> Name should be more than 5 char</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width"> 
+            <input matInput placeholder="Email"  formControlName="emailx" >
+            
+            <mat-error *ngIf="employeeProfileGroup.get('emailx').hasError('email')">Email should be vaild format</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+    </form>
+</mat-card>
+
+<mat-card class="example-card">
+    <mat-list class="example-form">
+        <h3 mat-subheader>Folders</h3>
+        <app-employee-list-element *ngFor="let em of employxes" [emp]="em"></app-employee-list-element>
+    </mat-list>
+</mat-card>
