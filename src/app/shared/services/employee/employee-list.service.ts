@@ -13,6 +13,7 @@ export class EmployeeListService {
      return this.employees
    }
    addEmployee(emp:Employee){
+     console.log("some");
      this.employees = [emp,...this.employees]
    }
 }
