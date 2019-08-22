@@ -14,28 +14,30 @@ export class EmployeeListComponent implements OnInit {
   employeeProfileGroup: FormGroup;
 
   getEmployees() {
-    this.employxes = this.employeeService.getAllEmployees()
+    // this.employxes = this.employeeService.getAllEmployees()
+
   }
   constructor(private employeeService: EmployeeListService, private fb: FormBuilder) {
     //this.formInputName = new FormControl();
     this.employeeProfileGroup = this.fb.group({
-      namex: ['',Validators.compose([Validators.required,Validators.minLength(5)])],
+      namex: ['', Validators.compose([Validators.required, Validators.minLength(5)])],
       emailx: ['', Validators.email]
     })
 
   }
-
   formSubmit() {
     if (this.employeeProfileGroup.valid) {
       this.employeeService.addEmployee({
         email: this.employeeProfileGroup.value.emailx,
         name: this.employeeProfileGroup.value.namex
       })
-      this.getEmployees()   
-    } 
+    }
   }
   ngOnInit() {
-    this.getEmployees()
+    //this.getEmployees()
+    this.employeeService.getAllEmployees().subscribe((response: Employee[]) => {
+      this.employxes = response
+    })
   }
 
 }
