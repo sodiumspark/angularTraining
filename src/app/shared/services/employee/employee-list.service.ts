@@ -33,6 +33,7 @@ export class EmployeeListService {
       }).pipe(map((r:any) => r.array))
   }
   addEmployee(emp: Employee) {
+    console.log("Hi")
     // concat(employees,of([emp]))
     // this.employees.pipe(concat(emp));
   }
