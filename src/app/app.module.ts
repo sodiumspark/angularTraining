@@ -11,7 +11,8 @@ import {MatNativeDateModule} from '@angular/material';
 import { EmployeeListElementComponent } from './shared/components/employee-list-element/employee-list-element.component'
 import {ReactiveFormsModule} from '@angular/forms'
 import {HttpClientModule} from "@angular/common/http";
-import { EmployeeDetailsComponent } from './pages/employee-details/employee-details.component'
+import { EmployeeDetailsComponent } from './pages/employee-details/employee-details.component';
+import { EmployeeCountComponent } from './shared/components/employee-count/employee-count.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EmployeeDetailsComponent } from './pages/employee-details/employee-deta
     EmployeeListComponent,
     ToolbarTitleComponent,
     EmployeeListElementComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    EmployeeCountComponent
   ],
   imports: [
     BrowserModule,
