@@ -14,3 +14,9 @@ export const employees:Employee[]=[      {
     name:"someName"
   }
 ]
+
+export interface RestResponse{
+  loading:boolean,
+  error:boolean,
+  fetched:boolean
+}

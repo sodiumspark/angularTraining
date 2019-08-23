@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Employee } from './../../shared/model/employee-model'
-import { EmployeeListService } from "./../../shared/services/employee/employee-list.service"
+import { Employee, employees } from './../../shared/model/employee-model'
+import { EmployeeListService, EmployeeRest } from "./../../shared/services/employee/employee-list.service"
 import { FormControl, FormGroup, FormBuilder, Validators } from "@angular/forms"
 
 @Component({
@@ -9,12 +9,15 @@ import { FormControl, FormGroup, FormBuilder, Validators } from "@angular/forms"
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
-  employxes: Employee[];
+  employxes: EmployeeRest;
   // formInputName: FormControl;
   employeeProfileGroup: FormGroup;
 
   getEmployees() {
-    // this.employxes = this.employeeService.getAllEmployees()
+    this.employeeService.getAllEmployees().subscribe((response: EmployeeRest) => {
+      console.log("employee data recived on ui", employees)
+      this.employxes = response
+    })
 
   }
   constructor(private employeeService: EmployeeListService, private fb: FormBuilder) {
@@ -23,8 +26,8 @@ export class EmployeeListComponent implements OnInit {
       namex: ['', Validators.compose([Validators.required, Validators.minLength(5)])],
       emailx: ['', Validators.email]
     })
-
   }
+
   formSubmit() {
     if (this.employeeProfileGroup.valid) {
       this.employeeService.addEmployee({
@@ -33,11 +36,10 @@ export class EmployeeListComponent implements OnInit {
       })
     }
   }
+
   ngOnInit() {
-    //this.getEmployees()
-    this.employeeService.getAllEmployees().subscribe((response: Employee[]) => {
-      this.employxes = response
-    })
+    this.getEmployees()
+
   }
 
 }
