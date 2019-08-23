@@ -72,8 +72,6 @@ export class EmployeeListService {
           data:response.rows
         })
 
-
-
       })
 
 
