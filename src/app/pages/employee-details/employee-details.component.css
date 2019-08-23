@@ -1,0 +1,30 @@
+.example-full-width{
+    width: 40%;
+    padding: 0 100 0 10;
+    margin: 20px 50px 20px auto;
+    margin: 0 100 0 100;
+  }
+
+  .employeeDetail-card{
+    max-width: 500px;
+    margin: 10px auto;
+    background-color: antiquewhite
+  
+  }
+ .myButton
+ {
+   /* align-self: left; */
+   float: right;
+   margin-right: 65px;
+   margin-bottom: 25px;
+
+ }
+#empForm
+{
+  height: 500px;
+}
+  .example-form{
+    max-width: 500px;
+    margin: 0 auto;
+
+  }
