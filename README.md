@@ -1,3 +1,18 @@
+Advanced API Integration
+Error handling
+Query Parameters
+State Management
+Lazy loading/Pagination
+Routing
+RouterLink
+Getting the Route Parameters
+ Routes with Multiple Parameters
+Query Parameters
+Life cycle hooks
+Responsiveness
+
+
+
 # EmployeePortal
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
